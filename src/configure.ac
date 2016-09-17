@@ -153,6 +153,7 @@ PLUGIN_ENABLED(lb)
 PLUGIN_ENABLED(sixrd)
 PLUGIN_ENABLED(snat)
 PLUGIN_ENABLED(flowtable)
+PLUGIN_ENABLED(portmirroring)
 
 ###############################################################################
 # Dependency checks

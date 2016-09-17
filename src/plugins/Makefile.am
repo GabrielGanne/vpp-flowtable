@@ -59,6 +59,10 @@ if ENABLE_FLOWTABLE_PLUGIN
 include flowtable.am
 endif
 
+if ENABLE_PORTMIRRORING_PLUGIN
+include portmirroring.am
+endif
+
 include ../suffix-rules.mk
 
 # Remove *.la files
