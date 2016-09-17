@@ -55,6 +55,10 @@ if ENABLE_SNAT_PLUGIN
 include snat.am
 endif
 
+if ENABLE_FLOWTABLE_PLUGIN
+include flowtable.am
+endif
+
 include ../suffix-rules.mk
 
 # Remove *.la files

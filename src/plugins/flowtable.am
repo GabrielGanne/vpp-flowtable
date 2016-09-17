@@ -11,23 +11,22 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-AUTOMAKE_OPTIONS = foreign subdir-objects
+vppplugins_LTLIBRARIES += flowtable_plugin.la
 
-# To add a new plugin subdirectory:
-#
-# add a stanza here:
-# if ENABLE_new_PLUGIN
-# SUBDIRS += new-plugin
-# endif
-#
-# Also: add PLUGIN(new) to configure.ac
+flowtable_plugin_la_SOURCES = \
+	flowtable/api.c \
+	flowtable/flowtable.c \
+	flowtable/flowtable_node.c \
+	flowtable/nodes_registration.c
 
-SUBDIRS =
+BUILT_SOURCES += \
+	flowtable/flowtable.api.h \
+	flowtable/flowtable.api.json
 
-if ENABLE_sample_PLUGIN
-SUBDIRS += sample-plugin
-endif
+# noinst_HEADERS += \
+#     flowperpkt/flowperpkt_all_api_h.h
 
-if ENABLE_vcgn_PLUGIN
-SUBDIRS += vcgn-plugin
-endif
+
+API_FILES += flowtable/flowtable.api.json
+
+# vi:syntax=automake
